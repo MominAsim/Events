@@ -1,0 +1,16 @@
+
+#user-layout-id{
+    margin-top: -10vh;
+}
+
+#user-profile{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.avatar-profile {
+    height: 16rem;
+    width: 16rem;
+  }
+  

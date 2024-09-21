@@ -1,0 +1,27 @@
+
+  
+  /* Toggle Button */
+  .toggle-btn {
+    background-color: #febd69;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 0.5vw;
+    display: none;
+  }
+  
+  
+  @media screen and (max-width: 850px) {
+  /* Toggle Button */
+  .toggle-btn {
+    background-color: #febd69;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 0.5vw !important;
+    display: show !important;
+    margin-top: 10vh;
+  }
+}

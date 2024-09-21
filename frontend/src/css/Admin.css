@@ -1,0 +1,6 @@
+
+@media screen and (max-width: 850px) {
+    #admin-layout{
+        margin-top: -4rem !important;
+    }
+}

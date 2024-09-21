@@ -1,0 +1,92 @@
+#select-wish-product-div-id{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin-top: 20vh;
+    margin-left: 12vw;
+}
+.product-select-div{
+    background-color: rgb(255, 255, 255);
+    width: 25vw;
+    height: 50vh;
+    transition: transform 0.5s ease;
+    display: flex;
+    align-items: center; /* Vertically centers the image */
+    justify-content: center; /* Horizontally centers the image */
+    overflow: hidden; /* Ensures the image doesn't overflow */
+}
+
+.product-select-div:hover{
+    transform: scale(1.25); 
+}
+
+.wish-select-div{
+    background-color: rgb(255, 255, 255);
+    width: 25vw;
+    height: 50vh; 
+    transition: transform 0.5s ease;
+    display: flex;
+    align-items: center; /* Vertically centers the image */
+    justify-content: center; /* Horizontally centers the image */
+    overflow: hidden; /* Ensures the image doesn't overflow */
+}
+
+.wish-select-div:hover{
+    transform: scale(1.25); 
+}
+
+.PRODUCT-select-Link{
+    width: 20vw;
+}
+
+.WISH-select-Link{
+    width: 20vw;
+}
+
+@media screen and (max-width: 850px) {
+    #select-wish-product-div-id{
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin-top: 10vh;
+        margin-left: 9vw;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+    }
+    .product-select-div{
+        background-color: rgb(255, 255, 255);
+        width: 75vw;
+        height: 30vh;
+        display: flex;
+        align-items: center; /* Vertically centers the image */
+        justify-content: center; /* Horizontally centers the image */
+        overflow: hidden; /* Ensures the image doesn't overflow */
+        margin-bottom: 10vh;
+    }
+    
+    .wish-select-div{
+        background-color: rgb(255, 255, 255);
+        width: 75vw;
+        height: 30vh;
+        transition: transform 0.5s ease;
+        display: flex;
+        align-items: center; /* Vertically centers the image */
+        justify-content: center; /* Horizontally centers the image */
+        overflow: hidden; /* Ensures the image doesn't overflow */
+        margin-bottom: 10vh;
+    }
+    #not-found-image{
+      width: 120vw;
+    }
+    .PRODUCT-select-Link{
+        width: 75vw;
+    }
+    
+    .WISH-select-Link{
+        width: 75vw;
+    }
+}
