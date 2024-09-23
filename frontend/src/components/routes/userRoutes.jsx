@@ -11,6 +11,7 @@ import ResetPassword from "../auth/ResetPassword";
 import  Home  from "../Home";
 import VerifyEmail from "../auth/VerifyEmail";
 import {Route} from "react-router-dom";
+import EventDetails from '../events/EventDetails';
 
 const userRoutes = () => {
   return (
@@ -23,6 +24,8 @@ const userRoutes = () => {
        <Route path="/password/reset/:token" element={<ResetPassword />}/>  
 
        <Route path="/verify-email/:token/:id" element={<VerifyEmail />}/>  
+
+       <Route path="/event/:id" element={<EventDetails />}/>  
 
        <Route 
        path="/me/profile" 

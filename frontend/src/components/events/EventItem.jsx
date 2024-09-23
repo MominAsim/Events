@@ -1,43 +1,22 @@
 import React from 'react'
 import {Link} from "react-router-dom";
-import StarRatings from 'react-star-ratings';
 import MetaData from '../layout/MetaData'
 
-const ProductItem = ({product, columnSize}) => {
+const EventItem = ({event, columnSize}) => {
   return (
     <> 
-    <MetaData title ={'TIS uniforms In Pakistan'} />
+    <MetaData title ={event?.name} />
         <div className={`col-sm-12 col-md-6 col-lg-${columnSize} my-3`}>
           <div className="card p-3 rounded">
-            <img
-              className="card-img-top mx-auto"
-              src={product?.images[0] ? product?.images[0]?.url : "/images/default_product.png"}
-              alt={product?.name}
-            />
-            <div
-              className="card-body ps-3 d-flex justify-content-center flex-column"
-            >
+            <div className="card-body ps-3 d-flex justify-content-center flex-column">
               <h5 className="card-title">
-                <Link to= {`/product/${product?._id}`}>{product?.name}</Link>
+                <Link to= {`/event/${event?._id}`}>{event?.name}</Link>
               </h5>
-              <div className="ratings mt-auto d-flex">
 
-              <StarRatings
-              rating={product?.ratings}
-              starRatedColor="#ffb829"
-              numberOfStars={5}
-              name='rating'
-              starDimension='22px'
-              starSpacing='1px'
-                />
-
-                <span id="no_of_reviews" className="pt-2 ps-2">  
-                  {" "}
-                  ({product?.numOfReviews})
-                </span>
-              </div>
-              <p className="card-text mt-2">PKR {""}{product?.price}</p>
-              <Link to = {`/product/${product?._id}`} id="view_btn" className="btn btn-block">
+              <p className="card-text mt-2">{event?.date}-{event?.month?.substring(0,3)}-{event?.year}</p>
+ 
+              <p className="card-text mt-2">{event?.timeStart} {" "} - {" "}{event?.timeEnd}</p>
+              <Link to = {`/event/${event?._id}`} id="view_btn" className="btn btn-block">
                 View Details
               </Link>
             </div>
@@ -47,4 +26,4 @@ const ProductItem = ({product, columnSize}) => {
   )
 }
 
-export default ProductItem
+export default EventItem
