@@ -50,7 +50,7 @@ const EventDetails = () => {
         <p id="product_seller mb-3">Event Created By: <strong>{event?.user}</strong></p>
 
         <hr />
-        <p>Event Updated At{event?.updatedAt?.substring(0,10)}</p>
+        <p>Event Created At: {" "}{event?.updatedAt?.substring(0,10)}</p>
 
       </div>
     </>
