@@ -13,7 +13,7 @@ const EventItem = ({event, columnSize}) => {
                 <Link to= {`/event/${event?._id}`}>{event?.name}</Link>
               </h5>
 
-              <p className="card-text mt-2">{event?.date}-{event?.month?.substring(0,3)}-{event?.year}</p>
+              <p className="card-text mt-2">{event?.date} - {event?.month?.substring(0,3)} - {event?.year}</p>
  
               <p className="card-text mt-2">{event?.timeStart} {" "} - {" "}{event?.timeEnd}</p>
               <Link to = {`/event/${event?._id}`} id="view_btn" className="btn btn-block">
