@@ -32,8 +32,13 @@ const Home = () => {
     <>
     <MetaData title = {'All Events'} />
     <div className="row">
-
     <div className={keyword ? "col-6 col-md-9" : "col-12 col-sm-6 col-md-12"}>
+    <br></br>
+    <br></br>
+
+    <h1 id="product_heading" className="text-secondary">  
+       School Events
+   </h1>
 
     <section id="products" className="mt-5">
     <div className="row">

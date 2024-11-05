@@ -71,6 +71,23 @@ resetPassword: builder.mutation({
   },
 }),
 
+getAllUsers: builder.query({
+  query: () => `/users`,
+  providesTags: ["Users"],
+}),
+
+updateUserNotAdmin: builder.mutation({
+  query({ id, body }) {
+    return {
+      url: `/add-event/${id}`,
+      method: "PUT",
+      body,
+    };
+  },
+  invalidatesTags: ["Users"],
+}),
+
+
 getAdminUsers: builder.query({
   query: () => `/admin/users`,
   providesTags: ["AdminUsers"],
@@ -80,6 +97,7 @@ getUserDetails: builder.query({
   query: (id) => `/admin/users/${id}`,
   providesTags: ["AdminUser"],
 }),
+
 updateUser: builder.mutation({
   query({ id, body }) {
     return {
@@ -110,6 +128,8 @@ export const {
   useUpdatePasswordMutation, 
   useForgotPasswordMutation, 
   useResetPasswordMutation,
+  useGetAllUsersQuery,
+  useUpdateUserNotAdminMutation,
   useGetAdminUsersQuery,
   useGetUserDetailsQuery,
   useUpdateUserMutation,

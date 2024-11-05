@@ -268,6 +268,63 @@ export const allUsers = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
+// get all users -ADMIN => /api/users
+export const getAllUsers = catchAsyncErrors(async (req, res, next) => {
+  const users = await User.find()
+ 
+   res.status(200).json({
+     users,
+   });
+ });
+
+
+
+
+ // update user details and add appointments => /api/users/:id
+export const updateUserAppointments = catchAsyncErrors(async (req, res, next) => {
+  const { appointmentSlots } = req.body;
+  
+  const newUserData = {
+ 
+  };
+
+  // Only add appointmentSlots if provided in the request body
+  if (appointmentSlots && Array.isArray(appointmentSlots)) {
+    newUserData.appointmentSlots = appointmentSlots.map(slot => ({
+      date: new Date(slot.date), // Ensure date is stored correctly
+      isBooked: slot.isBooked || false, // Default to false if not specified
+    }));
+  }
+
+  // Find and update the user by ID with new data, including appointments
+  const user = await User.findByIdAndUpdate(req.params.id, newUserData, {
+    new: true,
+    runValidators: true,
+  });
+
+  res.status(200).json({
+    success: true,
+    message: "User updated and appointment slots added successfully.",
+    user,
+  });
+});
+
+
+ // update user details --ADMIN => /api/users/:id
+ export const updateUserNotAdmin = catchAsyncErrors(async (req, res, next) => {
+  const newUserData = {
+
+  };
+
+  const user = await User.findByIdAndUpdate(req.params.id, newUserData, {
+    new: true,
+  });
+
+  res.status(200).json({
+    user,
+  });
+}); 
+
 //get user details - ADMIN => /api/admin/users/:id
 export const getUserDetails = catchAsyncErrors(async (req, res, next) => {
   const userDetail = await User.findById(req.params.id)

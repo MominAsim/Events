@@ -5,7 +5,6 @@ import MetaData from '../layout/MetaData'
 const EventItem = ({event, columnSize}) => {
   return (
     <> 
-    <MetaData title ={event?.name} />
         <div className={`col-sm-12 col-md-6 col-lg-${columnSize} my-3`}>
           <div className="card p-3 rounded">
             <div className="card-body ps-3 d-flex justify-content-center flex-column">

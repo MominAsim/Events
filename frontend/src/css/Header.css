@@ -1,5 +1,5 @@
 .header-logo{
-  width: 18vw;
+  width: 15vw;
   height: 15vh;
 }
 
@@ -110,9 +110,9 @@ nav {
     padding: 1rem 1rem;
   }
   .header-logo{
-    width: 85vw;
+    width: 75vw;
     height: 15vh;
-    margin-left: -5vw;
+    margin-bottom: -5vh;
   }
   .search-box-classname{
     align-items: center;
@@ -137,6 +137,7 @@ nav {
 
   #cart-login-user-div{
     color: white;
+    margin-left: -5vw;
   }
   #login_btn{
     color: white;

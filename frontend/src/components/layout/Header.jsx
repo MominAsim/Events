@@ -28,7 +28,7 @@ export default function Header() {
       <div className="col-12 col-md-3 ps-5" id='header-div-id'>
         <div className="navbar-brand">
           <a href="/">
-            <img src="../images/" alt="Event Planner" className='header-logo'/>
+            <img src="../images/logo-no-bg.png" alt="Event Planner" className='header-logo'/>
           </a>
         </div>
       </div>    
@@ -60,6 +60,10 @@ export default function Header() {
                     )}
                 
                     <Link className="dropdown-item" to="/me/profile"> Profile </Link>
+
+                    <Link className="dropdown-item" to="/users"> Schedule Meeting </Link>
+
+                    <Link className="dropdown-item" to="/"> My Events </Link>
 
                     <Link className="dropdown-item text-danger" onClick={logoutHandler} to="/"> Logout </Link>
                   </div>

@@ -41,6 +41,16 @@ verifyTokenExpire: {
   type: Date,
 },
 
+appointmentSlots: [
+  {
+    date: Date,
+    isBooked: {
+      type: Boolean,
+      default: false,
+    },
+  },
+],
+
 resetPasswordToken: String,
 resetPasswordExpire: Date,
 

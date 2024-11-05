@@ -2,6 +2,8 @@ import React from 'react'
 import Register from "../auth/Register";
 import Login from "../auth/Login";
 import Profile from "../user/Profile";
+import ListUserNotAdmin from "../user/ListUserNotAdmin";
+import addUserEvent from "../user/addUserEvent";
 import UpdateProfile from "../user/UpdateProfile";
 import ProtectedRoute from "../auth/ProtectedRoute";
 import UploadAvatar from "../user/UploadAvatar";
@@ -58,7 +60,24 @@ const userRoutes = () => {
             <UpdatePassword />
           </ProtectedRoute>
         }/>  
+       
+       <Route 
+       path="/users" 
+       element={
+        <ProtectedRoute>
+          <ListUserNotAdmin />
+          </ProtectedRoute>
+        }
+        /> 
 
+       <Route 
+       path="/add-event/:id" 
+       element={
+        <ProtectedRoute>
+          <addUserEvent />
+          </ProtectedRoute>
+        }
+        /> 
     </>
   )
 }

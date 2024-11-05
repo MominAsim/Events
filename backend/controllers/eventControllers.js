@@ -7,18 +7,24 @@ import { delete_file, upload_file } from "../utils/cloudinary.js";
 
 //get all Events   =>  /api/events
 export const getEvents = catchAsyncErrors(async (req, res, next) => {
-  const resPerPage = 8;
-  const apiFilters = new APIFilters(Event, req.query).search().filters();
+  // const resPerPage = 8;
+  // const apiFilters = new APIFilters(Event, req.query).search().filters();
 
-  let events = await apiFilters.query;
-  let filteredEventsCount = events.length;
+  // let events = await apiFilters.query;
+  // let filteredEventsCount = events.length;
  
-  apiFilters.pagination(resPerPage);
-  events = await apiFilters.query.clone();
+  // apiFilters.pagination(resPerPage);
+  // events = await apiFilters.query.clone();
+
+  const events = await Event.find().sort({ createdAt: -1 });
+
+  if (!events || events.length === 0) {
+    return next(new ErrorHandler('No events found', 404));
+  }
 
   res.status(200).json({
-    resPerPage,
-    filteredEventsCount,
+    // resPerPage,
+    // filteredEventsCount,
     events,
   });
 });
