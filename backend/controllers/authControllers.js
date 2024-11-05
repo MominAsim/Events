@@ -32,7 +32,7 @@ export const registerUser = catchAsyncErrors(async (req, res, next) => {
        subject: 'Email Verification',
        message,
      });
-
+ 
       res.status(201).json({
         message: "User created successfully",
       })

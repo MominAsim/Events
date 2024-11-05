@@ -63,8 +63,6 @@ export default function Header() {
 
                     <Link className="dropdown-item" to="/users"> Schedule Meeting </Link>
 
-                    <Link className="dropdown-item" to="/"> My Events </Link>
-
                     <Link className="dropdown-item text-danger" onClick={logoutHandler} to="/"> Logout </Link>
                   </div>
                 </div>

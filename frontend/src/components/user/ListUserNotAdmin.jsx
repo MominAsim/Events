@@ -7,8 +7,7 @@ import { useGetAllUsersQuery, } from '../../redux/api/userApi';
 import {Link} from "react-router-dom";
 
 const ListUserNotAdmin = () => {
-    const {data, isLoading, error} = 
-    useGetAllUsersQuery();
+    const {data, isLoading, error} = useGetAllUsersQuery();
 
    useEffect(() => {
         if(error){
@@ -26,12 +25,12 @@ const ListUserNotAdmin = () => {
                     sort: "asc",
                 },
                 {
-                  label: 'Username',
+                  label: 'Names',
                   field: 'name',
                   sort: "asc",
               },
                 {
-                    label: 'Actions',
+                    label: 'ADD MEETING',
                     field: 'actions',
                     sort: "asc",
                 },
@@ -41,12 +40,12 @@ const ListUserNotAdmin = () => {
 
         data?.users?.forEach((user) => {
             users.rows.push({
-                email: user?.email,
+                email: `${user?.email?.substring(0, 15)}...`,
                 name: user?.name,
                 actions: (
                 <> 
                 <Link to={`/add-event/${user?._id}`} className="btn btn-outline-primary" > 
-                <i className="fa fa-pencil"></i>
+                <i className="fas fa-plus"></i>
                 </Link>
                 
                 </>
@@ -61,7 +60,7 @@ const ListUserNotAdmin = () => {
 
     return (
       <>
-    <MetaData title ={'ALL USERS'} />
+    <MetaData title ={'All Users'} />
     <div>
     <h1 className='my-5'>{data?.user?.length} Users</h1>
 
