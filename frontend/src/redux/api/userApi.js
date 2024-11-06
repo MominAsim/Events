@@ -118,6 +118,12 @@ deleteUser: builder.mutation({
   },
   invalidatesTags: ["AdminUsers"],
 }),
+
+getSchedule: builder.query({
+  query: (id) => `/show-schedule/${id}`,
+  providesTags: ["AdminUser"],
+}),
+
 }),
 });
 
@@ -132,6 +138,7 @@ export const {
   useUpdateUserNotAdminMutation,
   useGetAdminUsersQuery,
   useGetUserDetailsQuery,
+  useGetScheduleQuery,
   useUpdateUserMutation,
   useDeleteUserMutation,
 } = userApi;

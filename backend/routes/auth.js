@@ -1,5 +1,5 @@
 import express from "express";
-import {updateUserAppointments,registerUser, loginUser, logout, forgotPassword, updateUserNotAdmin, getAllUsers, resetPassword, getUserProfile, updatePassword, updateProfile, getUserDetails, allUsers, updateUser, deleteUser, uploadAvatar, verifyToken} from '../controllers/authControllers.js'
+import {updateUserAppointments,registerUser, loginUser, logout, forgotPassword, getAllUsers, resetPassword, getUserProfile, updatePassword, updateProfile, getUserDetails, allUsers, updateUser, deleteUser, uploadAvatar, verifyToken} from '../controllers/authControllers.js'
 import { isAuthenticatedUser, authorizeRoles} from "../middlewares/auth.js";
 const router = express.Router();
 

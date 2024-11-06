@@ -14,6 +14,8 @@ import  Home  from "../Home";
 import VerifyEmail from "../auth/VerifyEmail";
 import {Route} from "react-router-dom";
 import EventDetails from '../events/EventDetails';
+import showSchedule from "../user/showSchedule";
+
 
 const userRoutes = () => {
   return (
@@ -78,6 +80,16 @@ const userRoutes = () => {
           </ProtectedRoute>
         }
         /> 
+
+       <Route 
+       path="/show-schedule/:id" 
+       element={
+        <ProtectedRoute>
+          <showSchedule />
+          </ProtectedRoute>
+        }
+        /> 
+
     </>
   )
 }

@@ -214,7 +214,6 @@ export const resetPassword = catchAsyncErrors(async (req, res, next) => {
   sendToken(user, 200, res);
 });
 
-
 //reset getUserprofile => /api/me
 export const getUserProfile = catchAsyncErrors(async (req, res, next) => {
     const user = await User.findById(req?.user?._id);
@@ -268,7 +267,7 @@ export const allUsers = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
-// get all users -ADMIN => /api/users
+// get all users => /api/users
 export const getAllUsers = catchAsyncErrors(async (req, res, next) => {
   const users = await User.find()
  
@@ -276,9 +275,6 @@ export const getAllUsers = catchAsyncErrors(async (req, res, next) => {
      users,
    });
  });
-
-
-
 
  // update user details and add appointments => /api/users/:id
 export const updateUserAppointments = catchAsyncErrors(async (req, res, next) => {
@@ -309,21 +305,6 @@ export const updateUserAppointments = catchAsyncErrors(async (req, res, next) =>
   });
 });
 
-
- // update user details --ADMIN => /api/users/:id
- export const updateUserNotAdmin = catchAsyncErrors(async (req, res, next) => {
-  const newUserData = {
-
-  };
-
-  const user = await User.findByIdAndUpdate(req.params.id, newUserData, {
-    new: true,
-  });
-
-  res.status(200).json({
-    user,
-  });
-}); 
 
 //get user details - ADMIN => /api/admin/users/:id
 export const getUserDetails = catchAsyncErrors(async (req, res, next) => {
@@ -393,4 +374,14 @@ export const uploadAvatar = catchAsyncErrors(async (req, res, next) => {
   res.status(200).json({
     user,
   });
+});
+
+
+//Get Schedule => /api/me
+export const getSchedule = catchAsyncErrors(async (req, res, next) => {
+  const user = await User.findById(req?.user?._id);
+  
+  res.status(200).json({
+    user,
+  })
 });

@@ -61,7 +61,9 @@ export default function Header() {
                 
                     <Link className="dropdown-item" to="/me/profile"> Profile </Link>
 
-                    <Link className="dropdown-item" to="/users"> Schedule Meeting </Link>
+                    {/* <Link className="dropdown-item" to="/users"> Schedule Meeting </Link>
+
+                    <Link className="dropdown-item" to="/my-schedule">My Schedule</Link> */}
 
                     <Link className="dropdown-item text-danger" onClick={logoutHandler} to="/"> Logout </Link>
                   </div>

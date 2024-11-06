@@ -5,6 +5,7 @@ import {MDBDataTable} from 'mdbreact';
 import MetaData from '../layout/MetaData'
 import { useGetAllUsersQuery, } from '../../redux/api/userApi';
 import {Link} from "react-router-dom";
+import "../../css/addMeeting.css"
 
 const ListUserNotAdmin = () => {
     const {data, isLoading, error} = useGetAllUsersQuery();
@@ -30,7 +31,7 @@ const ListUserNotAdmin = () => {
                   sort: "asc",
               },
                 {
-                    label: 'ADD MEETING',
+                    label: 'Actions',
                     field: 'actions',
                     sort: "asc",
                 },
@@ -44,8 +45,12 @@ const ListUserNotAdmin = () => {
                 name: user?.name,
                 actions: (
                 <> 
-                <Link to={`/add-event/${user?._id}`} className="btn btn-outline-primary" > 
+                <Link to={`/add-event/${user?._id}`} className="btn btn-outline-primary"> 
                 <i className="fas fa-plus"></i>
+                </Link>
+
+                <Link to={`/show-schedule/${user?._id}`} className="btn btn-outline-primary" id='actions-all-users-id'> 
+                <i className="fas fa-user"></i>
                 </Link>
                 
                 </>
@@ -62,7 +67,7 @@ const ListUserNotAdmin = () => {
       <>
     <MetaData title ={'All Users'} />
     <div>
-    <h1 className='my-5'>{data?.user?.length} Users</h1>
+    <h1 className='my-5'>Select A User</h1>
 
     <MDBDataTable 
     data={setUsers()}
