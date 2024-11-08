@@ -61,7 +61,7 @@ const eventSchema = new mongoose.Schema(
             },
           },
           
-          student:{
+          category:{
             type: String,
             required: [true, "Please enter a Student Name"],
             enum: {

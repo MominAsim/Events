@@ -20,7 +20,7 @@ const NewEvent = () => {
     year: "",
   });
 
-  const { name, description, timeStart, timeEnd, day, date, month, year, student } = event;
+  const { name, description, timeStart, timeEnd, day, date, month, year,  category } = event;
 
   const [createEvent, { isLoading, error, isSuccess }] =
     useCreateEventMutation();
@@ -178,19 +178,19 @@ const NewEvent = () => {
               </div>
 
               <div className="mb-3 col">
-                <label htmlFor="student_field" className="form-label">
+                <label htmlFor="category_field" className="form-label">
                  Student
                 </label>
                 <select
                   className="form-select"
-                  id="student_field"
-                  name="student"
-                  value={student}
+                  id="category_field"
+                  name="category"
+                  value={category}
                   onChange={onChange}
                 >
-                  {STUDENTS?.map((student) => (
-                    <option key={student} value={student}>
-                      {student}
+                  {STUDENTS?.map((category) => (
+                    <option key={category} value={category}>
+                      {category}
                     </option>
                   ))}
                 </select>

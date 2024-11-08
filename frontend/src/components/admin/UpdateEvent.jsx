@@ -7,7 +7,7 @@ import {
   useGetEventDetailsQuery,
   useUpdateEventMutation,
 } from "../../redux/api/eventApi";
-import { MONTHS, DAYS, DATES } from "../../constants/constants";
+import { MONTHS, DAYS, DATES, STUDENTS } from "../../constants/constants";
 
 const UpdateEvent = () => {
   const navigate = useNavigate();
@@ -22,9 +22,10 @@ const UpdateEvent = () => {
     date: "",
     month: "",
     year: "",
+    category: "",
   });
 
-  const { name, description, timeStart, timeEnd, day, date, month, year } = event;
+  const { name, description, timeStart, timeEnd, day, date, month, year, category } = event;
 
   const [updateEvent, { isLoading, error, isSuccess }] =
     useUpdateEventMutation();
@@ -39,6 +40,7 @@ const UpdateEvent = () => {
         timeStart: data?.event?.timeStart,
         timeEnd: data?.event?.timeEnd,
         month: data?.event?.month,
+        category: data?.event?.category,
       });
     }
 
@@ -191,6 +193,26 @@ const UpdateEvent = () => {
                 </select>
               </div>
 
+ 
+              <div className="mb-3 col">
+                <label htmlFor="category_field" className="form-label">
+                Students
+                </label>
+                <select
+                  className="form-select"
+                  id="category_field"
+                  name="category"
+                  value={category}
+                  onChange={onChange}
+                >
+                  {STUDENTS.slice(1)?.map((category) => (
+                    <option key={category} value={category}>
+                      {category}
+                    </option>
+                  ))}
+                </select>
+              </div>
+ 
               <div className="mb-3 col">
                 <label htmlFor="year_field" className="form-label">
                   {" "}

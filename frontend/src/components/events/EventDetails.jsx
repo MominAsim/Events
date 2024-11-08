@@ -5,6 +5,7 @@ import Loader from '../layout/Loader'
 import toast from 'react-hot-toast'
 import MetaData from '../layout/MetaData'
 import  NotFound  from '../layout/NotFound'
+import "../../css/Home.css"
 
 const EventDetails = () => {
   const params = useParams();
@@ -29,7 +30,7 @@ const EventDetails = () => {
   return (
     <> 
     <MetaData title ={event?.name} />
-      <div className="col-12 col-lg-5 mt-5">
+      <div className="col-12 col-lg-5 mt-5" id='event-detail-all'>
         <h3> {event?.name} </h3>
         <p id="product_id">Event Id #{event?._id}</p>
         <hr />
@@ -45,13 +46,13 @@ const EventDetails = () => {
         <p>
          {event?.description}
         </p>
-
         <hr />
+        
+        <p id="product_seller mb-3">People Involved In Event: <strong>{event?.category}</strong></p> 
         <p id="product_seller mb-3">Event Created By: <strong>{event?.user}</strong></p>
-
-        <hr />
         <p>Event Created At: {" "}{event?.updatedAt?.substring(0,10)}</p>
 
+        <hr />
       </div>
     </>
   )

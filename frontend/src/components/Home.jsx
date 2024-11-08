@@ -53,7 +53,7 @@ const Home = () => {
     <h1 id="products_heading" className="text-secondary">
       {keyword
       ? `${data?.events?.length} Events found with The name of "${keyword}"`
-      : "Latest Products"}
+      : "ALL EVENTS"}
     </h1>
 
     <section id="products" className="mt-5">
