@@ -60,6 +60,23 @@ const eventSchema = new mongoose.Schema(
               message: "Please select a correct Day of the week",
             },
           },
+          
+          student:{
+            type: String,
+            required: [true, "Please enter a Student Name"],
+            enum: {
+              values: [
+                "Select a Student",
+                "Momin",
+                "Zuraiz",
+                "Ali",
+                "Zarrar",
+                "Abdullah",
+                "Zeeshan",
+              ],
+              message: "Please enter a Student Name",
+            },
+          },
 
           date:{
             type: String,

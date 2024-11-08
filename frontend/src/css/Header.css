@@ -14,13 +14,13 @@
 #search_field {
   width: 40vw;
   height: 5vh !important;
-  margin-right: -1vw; /* Adjust margin as needed */
 }
 
 #search_btn {
   width: 5vw;
   height: 5vh !important;
-  margin-top: 5vh;
+  z-index: 100000000;
+  margin-left: -5vw !important;
 }
 
 .search_button_classname_header {
@@ -122,12 +122,16 @@ nav {
   #search_field{
     width: 80vw;
     height: 5vh !important;
-    margin-left: 5vw;
-    margin-right: -1vw; /* Adjust margin as needed */
+    /* margin-left: 5vw; */
+    margin-top: 3vh;
+    margin-bottom: -5vw !important;
   }
   #search_btn{
-    width: 20vw !important;
+    width: 15vw !important;
     height: 5vh !important;
+    margin-right: -10vw !important;
+    margin-top: 3vh;
+    z-index: 100000000;
   }
   .search_button_classname_header{
     align-items: right;

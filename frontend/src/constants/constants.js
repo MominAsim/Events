@@ -1,3 +1,13 @@
+export const STUDENTS = [   
+    "Select a Student",
+    "Momin",
+    "Zuraiz",
+    "Ali",
+    "Zarrar",
+    "Abdullah",
+    "Zeeshan",
+]; 
+
 export const MONTHS = [   
     "Select a month",
     "January",

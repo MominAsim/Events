@@ -3,7 +3,7 @@ import { toast } from "react-hot-toast";
 import MetaData from "../layout/MetaData";
 import AdminLayout from "../layout/AdminLayout";
 import { useNavigate } from "react-router-dom";
-import { MONTHS, DAYS, DATES } from "../../constants/constants";
+import { MONTHS, DAYS, DATES, STUDENTS } from "../../constants/constants";
 import { useCreateEventMutation } from "../../redux/api/eventApi";
 
 const NewEvent = () => {
@@ -20,7 +20,7 @@ const NewEvent = () => {
     year: "",
   });
 
-  const { name, description, timeStart, timeEnd, day, date, month, year } = event;
+  const { name, description, timeStart, timeEnd, day, date, month, year, student } = event;
 
   const [createEvent, { isLoading, error, isSuccess }] =
     useCreateEventMutation();
@@ -172,6 +172,25 @@ const NewEvent = () => {
                   {MONTHS?.map((month) => (
                     <option key={month} value={month}>
                       {month}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="mb-3 col">
+                <label htmlFor="student_field" className="form-label">
+                 Student
+                </label>
+                <select
+                  className="form-select"
+                  id="student_field"
+                  name="student"
+                  value={student}
+                  onChange={onChange}
+                >
+                  {STUDENTS?.map((student) => (
+                    <option key={student} value={student}>
+                      {student}
                     </option>
                   ))}
                 </select>
