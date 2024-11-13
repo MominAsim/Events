@@ -49,7 +49,7 @@ const Filters = () => {
 
       <hr></hr>
 <h5 className="mb-3">Students</h5>
-{STUDENTS?.slice(1).map((category) => (
+{STUDENTS?.map((category) => (
            <div className="form-check">
            <input
              className="form-check-input"
