@@ -66,7 +66,7 @@ const eventSchema = new mongoose.Schema(
             required: [true, "Please enter a Student Name"],
             enum: {
               values: [
-                "Select a Student",
+                "ALL STUDENTS",
                 "Momin",
                 "Zuraiz",
                 "Ali",

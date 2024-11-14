@@ -1,5 +1,5 @@
 export const STUDENTS = [   
-    // "Select a Student",
+    "ALL STUDENTS",
     "Momin",
     "Zuraiz",
     "Ali",

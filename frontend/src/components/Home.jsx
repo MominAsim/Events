@@ -11,18 +11,16 @@ import {useSearchParams} from 'react-router-dom'
 const Home = () => {
   let [searchParams] = useSearchParams()
   const page = searchParams.get("page") || 1;
-  const keyword = searchParams.get("keyword") || "";
+  const keyword = searchParams.get("keyword") || ""; 
   const min = searchParams.get("min")
   const max = searchParams.get("max") 
   const category = searchParams.get("category") 
-  const ratings = searchParams.get("ratings") 
 
   const params = { page, keyword };
   
   min !== null && (params.min = min);
   max !== null && (params.max = max);
   category !== null && (params.category = category);
-  ratings !== null && (params.ratings = ratings);
 
   const {data, isLoading, error, isError} = useGetEventsQuery(params);
    
