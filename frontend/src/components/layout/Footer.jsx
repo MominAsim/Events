@@ -11,8 +11,6 @@ export default function Footer() {
         Event Planner - 2024, All Rights Reserved
         <br></br>
         <br></br>
-
-        *Development Team is not responsible for any miscoduct or abuse of data done due to the website*
       </p>
       <br></br>
     </footer>
