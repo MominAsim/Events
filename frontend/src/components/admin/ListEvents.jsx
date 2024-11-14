@@ -49,7 +49,7 @@ const ListEvents = () => {
         data?.events?.forEach((event) => {
             events.rows.push({
                 // id: `${event?._id?.substring(0, 8)}...`,
-                name: `${event?.name?.substring(0, 10)}`,
+                name: `${event?.name}`,
                 actions: (
                 <> 
                 <Link to={`/admin/events/${event?._id}`} className="btn btn-outline-primary" > 
